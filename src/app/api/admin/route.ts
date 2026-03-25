@@ -77,17 +77,17 @@ export async function GET() {
       },
       recentActivities,
       queueStatus,
-      pendingApprovals: pendingApprovals.map(p => ({
+      pendingApprovals: pendingApprovals.map((p: any) => ({
         id: p._id,
         name: p.name,
         email: p.email,
         role: p.role,
         appliedAt: new Date(p.createdAt).toLocaleDateString()
       })),
-      staffPerformance: staffPerformance.map(s => ({
+      staffPerformance: staffPerformance.map((s: any) => ({
         id: s._id,
         name: s.name,
-        initials: s.name.split(' ').map(n => n[0]).join(''),
+        initials: s.name.split(' ').map((n: string) => n[0]).join(''),
         counter: 1,
         customersServed: s.customersServed || 0,
         avgTime: s.avgTime || "4.2"

@@ -25,6 +25,9 @@ export interface IAppointment {
   serviceNote?: string;
   startedAt?: Date;
   completedAt?: Date;
+
+  qrCode?: string;              
+  qrCodeGeneratedAt?: Date; 
   
   notificationSent: boolean;
   notifiedAt?: Date;
@@ -74,7 +77,7 @@ const appointmentSchema = new mongoose.Schema<IAppointment>(
     startedAt: { type: Date },
     completedAt: { type: Date },
 
-    qrCode: { type: String }, 
+    qrCode: { type: String },
     qrCodeGeneratedAt: { type: Date },
     
     notificationSent: { type: Boolean, default: false },
